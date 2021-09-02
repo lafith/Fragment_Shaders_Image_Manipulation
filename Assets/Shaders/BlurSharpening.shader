@@ -1,8 +1,9 @@
-Shader "Lfz/Blur"
+Shader "Lfz/Sharpening"
 {
     Properties
     {
-        //_T ("Blend Factor", Float) = 1.0
+        // 0 will give blur effect
+        _T ("Sharpening Factor", Float) = 1.0
         _MainTex ("Texture", 2D) = "white" {}
     }
     SubShader
@@ -32,7 +33,7 @@ Shader "Lfz/Blur"
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _MainTex_TexelSize;            
-            //float _T;
+            float _T;
 
             v2f vert (appdata v)
             {
@@ -78,7 +79,7 @@ Shader "Lfz/Blur"
                 col += 2*(c_01+c_10+c_12+c_21);
                 col += 4*c_11;
                 col /= 16;
-                //col = (1-_T)*col + _T*tex2D(_MainTex, i.uv);
+                col = (1-_T)*col + _T*tex2D(_MainTex, i.uv);
                 //col = tex2D(_MainTex, i.uv); //original color
                 return col;
             }
