@@ -13,9 +13,5 @@ This implementation is based on the [material](http://web.engr.oregonstate.edu/~
 ![edge](Recordings/edge.gif)
 ## Sharpening:
 ![sharpening](Recordings/sharpening.gif)
-## Blur:
-![blur](Recordings/blur.gif)
-## Contrast:
-![contrast](Recordings/constrast.gif)
 ## Image Negative:
 ![negative](Recordings/negative.gif)
