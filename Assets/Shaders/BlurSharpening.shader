@@ -1,4 +1,4 @@
-Shader "Lfz/Sharpening"
+Shader "Lfz/BlurSharpening"
 {
     Properties
     {
